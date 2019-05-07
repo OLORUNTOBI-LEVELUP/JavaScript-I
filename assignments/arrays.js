@@ -67,8 +67,10 @@ console.log(`Car 33 is a ${inventory[32]["car_year"]} ${inventory[32]["car_make"
 
 // ==== Challenge 2 ====
 // The dealer needs the information on the last car in their inventory.  What is the make and model of the last car in the inventory?  Log the make and model into the console.
-let lastCar = () => {
-    return `${inventory[20]["car_make"]} ${inventory[20]["car_model"]}`
+// inventory.length -1
+let lastCar = [];
+ lastCar = () => {
+    return `${inventory[inventory.length - 1]["car_make"]} ${inventory[inventory.length - 1]["car_model"]}`
 };
 console.log(lastCar());
 
@@ -86,10 +88,12 @@ inventory.sort((a,b) => {
     }
     return 0;
 });
+
+//change element to car
 console.log(inventory)
-carModels = inventory.map(function(element){
+carModels = inventory.map(function(car){
    
-    return element.car_make;
+    return car.car_make;
     
 })
 console.log(carModels);
@@ -97,8 +101,8 @@ console.log(carModels);
 // ==== Challenge 4 ====
 // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
 let carYears = [];
-carYears = inventory.map(element => {
-    return element.car_year;
+carYears = inventory.map(car => {
+    return car.car_year;
 })
 console.log(carYears);
 
@@ -118,7 +122,7 @@ BMWAndAudi = inventory.filter(element => {
         return element.car_make;
     };
 })
-console.log(BMWAndAudi);
+console.log(JSON.stringify(BMWAndAudi));
 
 
 
